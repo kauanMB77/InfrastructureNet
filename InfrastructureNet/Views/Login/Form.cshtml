@@ -2,8 +2,14 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="container">
+<style>
+    body {
+        background-color:lightgoldenrodyellow;
+    }
+</style>
+<br />
+<br />
+<div class="container" style="border-radius: 10px; background-color:white">
     <div class="content">        
         <!--FORMULÁRIO DE CADASTRO-->
         <div id="cadastro">
@@ -35,7 +41,8 @@
                 <br />
                 <p class="link">
                     Já tem conta?
-                    <a asp-controller="Login" asp-action="Index" type="button" class="btn btn-primary">Login</a>
+                    <a asp-controller="Login" asp-action="Index" type="button" class="btn btn-outline-primary">Login</a>
+                <br />
                 </p>
             </form>
         </div>

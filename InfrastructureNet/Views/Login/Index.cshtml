@@ -29,11 +29,10 @@
                             <label class="form-label">Senha</label>
                         </div>
                         <span class="text-danger">@ViewBag.Erro</span> <br />
-                            <button type="submit">Submit</button>
-                            <br />
+                        <button class="btn btn-success" type="submit">Submit</button>                       
+                        <a type="button" class="btn btn-primary" asp-controller="Login" asp-action="Cadastro">Register here</a>
+                        <br />
                         <p>
-                            Don't have an account?
-                            <a class="link-info" asp-controller="Login" asp-action="Cadastro">Register here</a>
                         </p>
                     </form>
 

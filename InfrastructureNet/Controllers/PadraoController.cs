@@ -129,6 +129,7 @@ namespace InfrastructureNet.Controllers
             }
         }
 
+        /*
         protected bool ExigeAutenticacao { get; set; } = true;
         public override void OnActionExecuting(ActionExecutingContext context)
         {
@@ -139,7 +140,7 @@ namespace InfrastructureNet.Controllers
                 ViewBag.Logado = true;
                 base.OnActionExecuting(context);
             }
-        }
+        }*/
     }
 
 }

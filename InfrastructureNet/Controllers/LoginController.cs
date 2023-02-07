@@ -10,6 +10,7 @@ namespace InfrastructureNet.Controllers
     {
         public IActionResult Index()
         {
+            HttpContext.Session.Clear();
             return View();
         }
 
@@ -37,7 +38,22 @@ namespace InfrastructureNet.Controllers
 
             if(senha == user.senha)
             {
+                if(user.isMaster == true)
+                {
+                    this.HttpContext.Session.SetString("master", "true");
+                }
+                else if(user.isADM == true)
+                {
+                    this.HttpContext.Session.SetString("ADM", "true");
+                }
+                else
+                {
+                    this.HttpContext.Session.SetString("Logado", "true");
+                }
+                /*
                 this.HttpContext.Session.SetString("Logado", "true");
+                if(user.isADM) { this.HttpContext.Session.SetString("IsADM", "true"); }
+                if(user.isMaster) { this.HttpContext.Session.SetString("IsMaster", "true"); }*/
                 return RedirectToAction("Index", "Home");
             }
             else

@@ -16,6 +16,9 @@ namespace InfrastructureNet.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Logado = HelperControllers.VerificaUserLogado(HttpContext.Session);
+            ViewBag.ADM = HelperControllers.VerificaUserADM(HttpContext.Session);
+            ViewBag.master = HelperControllers.VerificaUserMestre(HttpContext.Session);
             return View();
         }
 

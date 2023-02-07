@@ -29,14 +29,17 @@ namespace InfrastructureNet.DAO
             model.Id = Convert.ToInt32(registro["id"]);
             model.usuario = registro["usuario"].ToString();
             model.senha = registro["senha"].ToString();
-            if (registro["isADM"].ToString() == "T")
+            /*if (registro["isADM"].ToString() == "true")
                 model.isADM = true;
             else
                 model.isADM = false;
-            if (registro["isMaster"].ToString() == "T")
+            if (registro["isMaster"].ToString() == "true")
                 model.isMaster = true;
             else
-                model.isMaster = false;
+                model.isMaster = false;*/
+
+            model.isADM = (bool)registro["isADM"];
+            model.isMaster = (bool)registro["isMaster"];
 
             return model;
         }

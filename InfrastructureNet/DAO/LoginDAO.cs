@@ -67,7 +67,7 @@ namespace InfrastructureNet.DAO
                 new SqlParameter("usuario", usuario),
                 new SqlParameter("senha", senha),
             };
-            HelperDAO.ExecutaProc("spIncluiUser", p);
+            HelperDAO.ExecutaProc("spInsert_Users", p);
 
             return null;
         }

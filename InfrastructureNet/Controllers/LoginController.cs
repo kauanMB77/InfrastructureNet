@@ -26,6 +26,11 @@ namespace InfrastructureNet.Controllers
 
         public IActionResult FazLogin(string usuario, string senha)
         {
+            if(usuario == null || senha == null)
+            {
+                ViewBag.Erro = "Usuário ou senha em branco!";
+                return View("Index");
+            }
             LoginViewModel user = new LoginViewModel();
             LoginDAO a = new LoginDAO();
             user = a.ConsultaLogin(usuario);

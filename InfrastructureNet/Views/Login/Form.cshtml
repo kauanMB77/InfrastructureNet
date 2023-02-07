@@ -9,28 +9,33 @@
         <div id="cadastro">
             <form method="post" action="CadastraLogin">
                 <h1>Cadastro</h1>
-
-                <p>
-                    <label for="id">Seu Id</label>
-                    <input id="id" name="id" required="required" type="text" value="@Model.Id"/>
-                </p>
-                <p>
-                    <label for="usuario">Seu User</label>
-                    <input id="usuario" name="usuario" required="required" type="text"/>
-                </p>
-
-                <p>
-                    <label for="senha">Sua senha</label>
-                    <input id="senha" name="senha" required="required" type="password"/>
-                </p>
-
-                <p>
-                    <input type="submit" value="Cadastrar" />
-                </p>
-
+               <div class="form-group">
+                    <p>
+                        <label for="id">Seu Id</label>
+                        <input readonly class="form-control" id="id" name="id" required="required" type="text" value="@Model.Id"/>
+                    </p>
+                </div>
+                <div class="form-group">
+                     <p>
+                         <label for="usuario">Seu User</label>
+                         <input class="form-control" id="usuario" name="usuario" required="required" type="text"/>
+                     </p>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <label for="senha">Sua senha</label>
+                        <input class="form-control"  id="senha" name="senha" required="required" type="password" />
+                    </p>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <input class="btn btn-outline-primary" type="submit" value="Cadastrar" />
+                    </p>
+                </div>
+                <br />
                 <p class="link">
                     Já tem conta?
-                    <a asp-controller="Login" asp-action="Index"> Ir para Login </a>
+                    <a asp-controller="Login" asp-action="Index" type="button" class="btn btn-primary">Login</a>
                 </p>
             </form>
         </div>

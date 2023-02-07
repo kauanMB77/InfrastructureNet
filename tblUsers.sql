@@ -9,3 +9,30 @@ usuario varchar(30) NOT NULL,
 senha varchar(30) NOT NULL,
 isAdm bit,
 isMaster bit)
+
+Go
+create procedure spConsultaLogin
+(
+@usuario varchar(max)
+)
+as
+begin
+	select * from Users
+	where usuario = @usuario
+end
+
+Go
+create procedure spInsert_Users
+(
+@id int,
+@usuario varchar(max),
+@senha varchar(max)
+)
+as
+begin
+	insert into Users
+	(id, usuario, senha, isAdm, isMaster)
+	values
+	(@id, @usuario, @senha, 0, 0)
+end
+

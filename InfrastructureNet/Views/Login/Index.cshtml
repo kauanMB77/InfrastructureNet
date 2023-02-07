@@ -9,6 +9,7 @@
             <div class="col-sm-6 text-black">
 
                 <div class="px-5 ms-xl-4">
+
                     <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
                     <img src="https://creativereview.imgix.net/content/uploads/2011/03/Corporatelarge_r.jpg"
                          alt="Logo image" class="w-50 vh-50" style="object-fit: cover; object-position: left;">
@@ -19,14 +20,12 @@
                     <form action="/Login/FazLogin" method="FazLogin" style="width: 23rem;">
 
                         <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
-
+                            <div class="form-outline mb-4">
+                                <input type="text" name="usuario" required="required" class="form-control form-control-lg" />
+                                <label class="form-label">Usuário</label>
+                            </div>
                         <div class="form-outline mb-4">
-                            <input type="text" name="usuario" class="form-control form-control-lg" />
-                            <label class="form-label">Usuário</label>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="password" name="senha" class="form-control form-control-lg" />
+                            <input type="password" name="senha" required="required" class="form-control form-control-lg" />
                             <label class="form-label">Senha</label>
                         </div>
                         <span class="text-danger">@ViewBag.Erro</span> <br />

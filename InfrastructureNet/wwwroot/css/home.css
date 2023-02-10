@@ -1,0 +1,18 @@
+﻿body {
+    background-color: lightgray;
+}
+.mainContainer {
+    background-color: white;
+    border-radius: 10px;    
+}
+
+.grid{
+    display: grid;
+}
+
+.item{
+    margin: 5px;
+    background: white;
+    text-align: right;
+    font-size: 1.5em;
+}

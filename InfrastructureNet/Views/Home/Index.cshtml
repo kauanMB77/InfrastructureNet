@@ -1,15 +1,37 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@if(ViewBag.ADM == true || ViewBag.master == true)
-{
+<link rel="stylesheet" href="~/css/home.css"/>
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>
+@if(ViewBag.ADM == true || ViewBag.master == true || ViewBag.logado == true)
+{
+<div>
+<section class="grid">
+	<div class="item">
+		@if (ViewBag.ADM == true || ViewBag.master == true || ViewBag.logado == true)
+		{
+			<h2>Área direcionada para usuários logados++!</h2>
+		}
+	</div>
+	<div class="item">
+		@if (ViewBag.ADM == true || ViewBag.master == true)
+		{
+			<h2>Área direcionada para usuários ADM++!</h2>
+		}
+	</div>
+	<div class="item">
+	<div class="item">
+		@if (ViewBag.master == true)
+		{
+			<h2>Área direcionada para usuários Master!</h2>
+		}
+	</div>
+</section>
+</div>
 }
 else
 {
     <li><a asp-area="" asp-controller="Login" asp-action="Index">Login</a></li>
 }
+
+

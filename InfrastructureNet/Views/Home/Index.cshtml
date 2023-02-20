@@ -3,6 +3,17 @@
 }
 <link rel="stylesheet" href="~/css/home.css"/>
 
+<div class="header">
+	<a href="#default" class="logo">Pirelli</a>
+	<div class="header-right">
+		<a asp-controller="Home" asp-action="Suport" type="button" class="btn btn-outline-primary">Suporte</a>
+		<a asp-controller="Login" asp-action="LogOff" type="button" class="btn btn-outline-primary">Sair</a>
+	</div>
+</div>
+
+<br />
+<br />
+
 @if(ViewBag.ADM == true || ViewBag.master == true || ViewBag.logado == true)
 {
 <div>
@@ -10,19 +21,27 @@
 	<div class="item">
 		@if (ViewBag.ADM == true || ViewBag.master == true || ViewBag.logado == true)
 		{
-			<h2>Área direcionada para usuários logados++!</h2>
+			<div class="mainContainer">
+				<h2>Área direcionada para usuários logados++!</h2>
+			</div>
 		}
 	</div>
 	<div class="item">
 		@if (ViewBag.ADM == true || ViewBag.master == true)
 		{
-			<h2>Área direcionada para usuários ADM++!</h2>
+			<div class="mainContainer">
+				<h2>Área direcionada para usuários ADM++!</h2>
+			</div>
 		}
 	</div>
 	<div class="item">
 		@if (ViewBag.master == true)
 		{
-			<h2>Área direcionada para usuários Master!</h2>
+			<div class="mainContainer">
+				<a asp-controller="Login" asp-action="LogOff" type="button" class="btn btn-outline-success">Autenticação</a>
+				<br />
+				Área de autenticação de usuários ADM
+			</div>
 		}
 	</div>
 </section>
@@ -32,5 +51,3 @@ else
 {
     <li><a asp-area="" asp-controller="Login" asp-action="Index">Login</a></li>
 }
-
-

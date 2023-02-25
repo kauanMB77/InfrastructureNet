@@ -1,0 +1,45 @@
+﻿@model List<LoginViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Controle de Usuários ADM</h2>
+<br />
+<br />
+<table class="table table-responsive">
+    <tr>
+        <th>User</th>
+        <th>Controle ADM</th>
+        <th>Ações</th>
+    </tr>
+    @foreach (var login in Model)
+    @if(login.isMaster == false)
+    {
+        {
+            <tr>
+                <td>@login.usuario</td>
+                <td>@if(login.isADM == true)
+                    {
+                    <p>Adm</p>
+                    }
+                    else
+                    {
+                    <p>User</p>
+                    }
+                </td>
+                <td>@if(login.isADM == true)
+                    {
+                        <form asp-action="concedeAdm" asp-controller="Controle_Adm">
+                            <a asp-area="" asp-controller="Controle_Adm" asp-action="Retira_Adm" type="button" class="btn btn-outline-danger">Retira ADM</a>
+                            <input class="btn btn-outline-danger" type="submit" value="retira adm btn" />
+                        </form>
+                    }
+                    else
+                    {
+                        <a asp-area="" asp-controller="Controle_Adm" asp-action="Concede_Adm" type="button" class="btn btn-outline-success">Concede ADM</a>
+                    }
+                </td>
+            </tr>
+        }
+    }
+</table>

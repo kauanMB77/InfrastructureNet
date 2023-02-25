@@ -81,5 +81,14 @@ namespace InfrastructureNet.DAO
             DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
             return Convert.ToInt32(tabela.Rows[0]["MAIOR"]);
         }
+
+        public void concedeAdm(string usuario)
+        {
+            var p = new SqlParameter[]
+            {
+                new SqlParameter("usuario", usuario),
+            };
+            HelperDAO.ExecutaProc("spConcedeAdm", p);
+        }
     }
 }

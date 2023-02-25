@@ -1,18 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" href="~/css/home.css"/>
 
-<div class="header">
-	<a href="#default" class="logo">Pirelli</a>
-	<div class="header-right">
-		<a asp-controller="Home" asp-action="Suport" type="button" class="btn btn-outline-primary">Suporte</a>
-		<a asp-controller="Login" asp-action="LogOff" type="button" class="btn btn-outline-primary">Sair</a>
-	</div>
-</div>
-
-<br />
-<br />
 
 @if(ViewBag.ADM == true || ViewBag.master == true || ViewBag.logado == true)
 {
@@ -38,7 +28,7 @@
 		@if (ViewBag.master == true)
 		{
 			<div class="mainContainer">
-				<a asp-controller="Login" asp-action="LogOff" type="button" class="btn btn-outline-success">Autenticação</a>
+				<a asp-area="" asp-controller="Controle_Adm" asp-action="Index" type="button" class="btn btn-outline-success">ControleADM</a>
 				<br />
 				Área de autenticação de usuários ADM
 			</div>

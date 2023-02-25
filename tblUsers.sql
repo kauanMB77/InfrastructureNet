@@ -36,3 +36,14 @@ begin
 	(@id, @usuario, @senha, 0, 0)
 end
 
+Go
+create procedure spConcedeAdm
+(
+@usuario varchar(max)
+)
+as
+begin
+update Users
+set isAdm = 1
+where usuario = @usuario;
+end

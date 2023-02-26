@@ -90,5 +90,14 @@ namespace InfrastructureNet.DAO
             };
             HelperDAO.ExecutaProc("spConcedeAdm", p);
         }
+
+        public void retiraAdm(string usuario)
+        {
+            var p = new SqlParameter[]
+            {
+                new SqlParameter("usuario", usuario),
+            };
+            HelperDAO.ExecutaProc("spRetiraAdm", p);
+        }
     }
 }

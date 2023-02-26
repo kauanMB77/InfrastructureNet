@@ -29,14 +29,11 @@
                 </td>
                 <td>@if(login.isADM == true)
                     {
-                        <form asp-action="concedeAdm" asp-controller="Controle_Adm">
-                            <a asp-area="" asp-controller="Controle_Adm" asp-action="Retira_Adm" type="button" class="btn btn-outline-danger">Retira ADM</a>
-                            <input class="btn btn-outline-danger" type="submit" value="retira adm btn" />
-                        </form>
+                        <a href="/Controle_Adm/RetiraAdm?usuario=@login.usuario" type="button" class="btn btn-outline-danger">Retirar ADM</a>
                     }
                     else
                     {
-                        <a asp-area="" asp-controller="Controle_Adm" asp-action="Concede_Adm" type="button" class="btn btn-outline-success">Concede ADM</a>
+                        <a href="/Controle_Adm/ConcedeAdm?usuario=@login.usuario" type="button" class="btn btn-outline-success">Conceder ADM</a>
                     }
                 </td>
             </tr>

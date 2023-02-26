@@ -1,0 +1,32 @@
+﻿@model List<LoginViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Troca de senha</h1>
+
+<form method="post" action="modificaSenha">
+    <div class="form-group">
+        <p>
+            <label for="senhaAntiga">Senha Antiga</label>
+            <input class="form-control" id="senhaAntiga" name="senhaAntiga" required="required" type="text"/>
+        </p>
+    </div>
+    <div class="form-group">
+        <p>
+            <label for="senhaNova">Nova senha</label>
+            <input class="form-control" id="senhaNova" name="senhaNova" required="required" type="text"/>
+        </p>
+    </div>
+    <div class="form-group">
+        <p>
+            <label for="senhaConfirma">Confirmar senha</label>
+            <input class="form-control" id="senhaConfirma" name="senhaConfirmar" required="required" type="text" />
+        </p>
+    </div>
+        <div class="form-group">
+        <p>
+            <input class="btn btn-outline-primary" type="submit" value="trocaSenha" />
+        </p>
+    </div>
+</form>

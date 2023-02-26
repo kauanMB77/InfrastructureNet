@@ -12,7 +12,7 @@
 		@if (ViewBag.ADM == true || ViewBag.master == true || ViewBag.logado == true)
 		{
 			<div class="mainContainer">
-				<h2>Área direcionada para usuários logados++!</h2>
+				<a asp-area="" asp-controller="Troca_senha" asp-action="Index" type="button" class="btn btn-outline-success">Trocar Senha</a>
 			</div>
 		}
 	</div>

@@ -18,7 +18,24 @@ namespace InfrastructureNet.Controllers
         {
             LoginDAO dao = new LoginDAO();
             dao.concedeAdm(usuario);
-            return View();
+            return RedirectToAction("AdmSucesso", "Controle_Adm");
+        }
+
+        public IActionResult retiraAdm(string usuario)
+        {
+            LoginDAO dao = new LoginDAO();
+            dao.retiraAdm(usuario);
+            return RedirectToAction("RetiraAdmSucesso", "Controle_Adm");
+        }
+
+        public IActionResult AdmSucesso()
+        {
+            return View("AdmSucesso");
+        }
+
+        public IActionResult RetiraAdmSucesso()
+        {
+            return View("RetiraAdmSucesso");
         }
     }
 }

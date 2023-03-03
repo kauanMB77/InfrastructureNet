@@ -47,3 +47,15 @@ update Users
 set isAdm = 1
 where usuario = @usuario;
 end
+
+Go
+create procedure spRetiraAdm
+(
+@usuario varchar(max)
+)
+as
+begin
+update Users
+set isAdm = 0
+where usuario = @usuario;
+end
